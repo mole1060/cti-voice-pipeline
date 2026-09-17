@@ -4,9 +4,9 @@ $dir = Split-Path $PSScriptRoot -Parent   # repo 根目錄
 Set-Location $dir
 
 $jobs = @(
-    @{ clinic = "A院區"; limit = 1053 },
-    @{ clinic = "B院區"; limit = 778 },
-    @{ clinic = "C院區"; limit = 751 }
+    @{ clinic = "B院區"; limit = 1053 },
+    @{ clinic = "C院區"; limit = 778 },
+    @{ clinic = "D院區"; limit = 751 }
 )
 
 foreach ($j in $jobs) {
