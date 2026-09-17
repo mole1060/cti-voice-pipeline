@@ -1,0 +1,44 @@
+{
+  "version": "example",
+  "domain": "電話客服錄音逐字稿",
+  "note": "這是結構範本，不是實際使用的術語表。實際的誤認對映表（由全量逐字稿的 term_candidates 人工審核而來）未隨本 repo 發布。複製到 repo 根目錄改名為 glossary.json 後即可執行。",
+
+  "confidence_levels": {
+    "confirmed": "兩模型交叉驗證，可自動套用",
+    "likely": "語境明確但兩模型皆錯，建議人工確認一次",
+    "unverified": "僅為推測，不要自動替換"
+  },
+
+  "corrections": [
+    {
+      "correct": "正確詞",
+      "variants": ["whisper 誤寫成的樣子1", "誤寫2"],
+      "confidence": "confirmed"
+    },
+    {
+      "correct": "另一個正確詞",
+      "variants": ["誤寫3"],
+      "confidence": "likely"
+    }
+  ],
+
+  "vocabulary": {
+    "專業術語": ["術語1", "術語2"],
+    "藥品或耗材": ["品項1", "品項2"]
+  },
+
+  "rules": [
+    {
+      "desc": "數字唸法",
+      "detail": "電話號碼與生日照原文數字保留，不要改寫成國字。"
+    }
+  ],
+
+  "invalid_call_markers": {
+    "phrases": [
+      "您撥的電話無人接聽",
+      "對方忙線中",
+      "這是語音信箱"
+    ]
+  }
+}

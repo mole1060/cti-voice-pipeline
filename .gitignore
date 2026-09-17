@@ -1,0 +1,69 @@
+# ─────────────────────────────────────────────────────────────
+# 這個 repo 只放程式碼。以下一律不進版本庫。
+# 先擋副檔名，再擋目錄名 —— 兩層都要，因為錄音「檔名本身」就含完整電話號碼。
+# ─────────────────────────────────────────────────────────────
+
+# 錄音本體
+*.wav
+*.WAV
+*.mp3
+*.ogg
+*.flac
+*.gsm
+*.au
+*.m4a
+*.alaw
+*.ulaw
+
+# 原始錄音目錄（來源掛載點）
+CTI/
+00_raw/
+02_normalized/
+
+# 逐字稿與分析產出（含姓名、生日、電話、病歷資訊）
+04_transcript/
+05_analysis/
+_run_*/
+_asr_*/
+_補壞檔*/
+
+# 報表（本機限定，不去識別化）
+report/
+*.html
+*.csv
+*.tsv
+*.xlsx
+
+# 標籤體系、術語表與 prompt 樣板 —— 實際內容不發布，只提供 config/ 下的結構範本
+labels.json
+glossary.json
+prompt_*.txt
+
+# 例外：config/ 底下的範本本來就是要發布的（上面的 prompt_*.txt 會誤擋到）
+!config/*.example.json
+!config/*.example.txt
+
+# 模型權重
+models/
+*.bin
+
+# 執行痕跡
+*.log
+*.pid
+state/
+*.sqlite
+*.sqlite-journal
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+
+# 編輯器與作業系統
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store
